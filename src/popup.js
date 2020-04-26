@@ -1,17 +1,7 @@
-'use strict';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
 
-import './popup.css';
-import React from "react";
-import ReactDOM from "react-dom";
-import "antd/dist/antd.css";
-
-import Demo from './components/demo.js';
-
-
-(function() {
-  ReactDOM.render(
-    <Demo></Demo>,
-    document.getElementById("root")
-  );
-  
+(function () {
+  ReactDOM.render(<App></App>, document.getElementById('root'));
 })();
