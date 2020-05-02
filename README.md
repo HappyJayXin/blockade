@@ -1,4 +1,4 @@
-# <img src="public/icons/logo.png" width="45" align="left"> Blockade chrome extension
+# <img src="public/icons/logo-32.png" align="left"> Blockade
 
 blockade chrome extension using React.
 
