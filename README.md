@@ -1,17 +1,7 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> My Extension
+# <img src="public/icons/logo.png" width="45" align="left"> Blockade chrome extension
 
-My First React Chrome Extension
-
-## Features
-
-- Feature 1
-- Feature 2
+blockade chrome extension using React.
 
 ## Install
 
-[**Chrome** extension]() <!-- TODO: Add chrome extension link inside parenthesis -->
-
-## Contribution
-
-Suggestions and pull requests are welcomed!.
-
+[**Chrome** extension]()
