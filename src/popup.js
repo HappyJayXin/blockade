@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './containers/App';
 import './popup.css';
 
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import theme from './helpers/theme';
+
 (function () {
-  ReactDOM.render(<App></App>, document.getElementById('root'));
+  ReactDOM.render(
+    <MuiThemeProvider theme={theme}>
+      <App></App>
+    </MuiThemeProvider>,
+    document.getElementById('root')
+  );
 })();
