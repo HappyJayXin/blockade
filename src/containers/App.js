@@ -23,8 +23,14 @@ const App = () => {
     });
   }, [currentUrl]);
 
+  const settingHandle = () => {
+    chrome.tabs.create({
+      'url': 'setting.html'
+    })
+  };
+
   return (
-    <AppComp blockadeHandle={blockadeHandle} />
+    <AppComp blockadeHandle={blockadeHandle} settingHandle={settingHandle} />
   )
 };
 

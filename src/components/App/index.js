@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import useStyles from './styled';
 import { Typography, Grid, ButtonGroup, Button } from '@material-ui/core';
 
-const App = ({ blockadeHandle }) => {
+const App = ({ blockadeHandle, settingHandle }) => {
   const { container } = useStyles();
 
   return (
@@ -20,7 +20,7 @@ const App = ({ blockadeHandle }) => {
               封鎖此網站
             </Button>
 
-            <Button>設定</Button>
+            <Button onClick={settingHandle}>設定</Button>
           </ButtonGroup>
         </Grid>
       </Grid>
@@ -30,6 +30,7 @@ const App = ({ blockadeHandle }) => {
 
 App.prototype = {
   blockadeHandle: PropTypes.func.isRequired,
+  settingHandle: PropTypes.func.isRequired,
 };
 
 export default App;
