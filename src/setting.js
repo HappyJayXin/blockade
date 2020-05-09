@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Setting from './components/Setting';
+import Setting from './page/setting';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from './helpers/theme';
