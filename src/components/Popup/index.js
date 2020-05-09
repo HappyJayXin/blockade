@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import useStyles from './styled';
 import { Typography, Grid, ButtonGroup, Button } from '@material-ui/core';
 
-const App = ({ blockadeHandle, settingHandle }) => {
+const Popup = ({ blockadeHandle, settingHandle }) => {
   const { container } = useStyles();
 
   return (
@@ -28,9 +28,9 @@ const App = ({ blockadeHandle, settingHandle }) => {
   );
 };
 
-App.prototype = {
+Popup.prototype = {
   blockadeHandle: PropTypes.func.isRequired,
   settingHandle: PropTypes.func.isRequired,
 };
 
-export default App;
+export default Popup;

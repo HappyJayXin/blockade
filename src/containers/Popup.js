@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import AppComp from '../components/App';
+import PopupComp from '../components/Popup';
 
-const App = () => {
+const Popup = () => {
   const [currentUrl, setCurrentUrl] = useState('');
   const blockadeHandle = () => {
     chrome.tabs.getSelected(null, (tab) => {
@@ -30,8 +30,8 @@ const App = () => {
   };
 
   return (
-    <AppComp blockadeHandle={blockadeHandle} settingHandle={settingHandle} />
+    <PopupComp blockadeHandle={blockadeHandle} settingHandle={settingHandle} />
   )
 };
 
-export default App;
+export default Popup;
