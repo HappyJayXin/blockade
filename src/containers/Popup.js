@@ -5,7 +5,9 @@ const Popup = () => {
   const [currentUrl, setCurrentUrl] = useState('');
   const blockadeHandle = () => {
     chrome.tabs.getSelected(null, (tab) => {
-      setCurrentUrl(tab.url);
+      if (tab.url && tab.url.length > 0) {
+        setCurrentUrl(tab.url);
+      }
     });
   };
 
