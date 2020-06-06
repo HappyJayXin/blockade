@@ -9,5 +9,6 @@ export default makeStyles(() => ({
     padding: '10px',
     marginBottom: '5px',
     cursor: 'pointer',
+    wordWrap: 'break-word',
   }
 }));
