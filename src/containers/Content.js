@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import useInterval from '../hooks/useInterval';
 import arrayMatch from '../helpers/arrayMatch';
@@ -44,7 +44,12 @@ const Content = () => {
   return (
     <>
       <ContentComp list={blockadeList} onClick={handleOpen} />
-      <DialogModal close={handleClose} open={open} deleteUrl={deleteUrl} />
+      <DialogModal
+        close={handleClose}
+        open={open}
+        deleteUrl={deleteUrl}
+        name={blockadeList[selectIndex]}
+      />
     </>
   );
 };
