@@ -9,21 +9,24 @@ const Content = ({ list, onClick }) => {
 
   return (
     <div className={container}>
-      {list.map(
-        (item, inx) =>
-          item && (
-            <Paper className={paper} key={inx} elevation={3} variant="outlined" onClick={() => onClick(inx)}>
-              {item}
-            </Paper>
-          )
-      )}
+      {list.map((item, inx) => (
+        <Paper
+          className={paper}
+          key={inx}
+          elevation={3}
+          variant="outlined"
+          onClick={() => onClick(inx)}
+        >
+          {item}
+        </Paper>
+      ))}
     </div>
   );
 };
 
 Content.defaultProps = {
   list: [],
-  onClick: () => {}
+  onClick: () => {},
 };
 
 Content.prototype = {

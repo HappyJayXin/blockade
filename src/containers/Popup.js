@@ -1,39 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PopupComp from '../components/Popup';
 
 const Popup = () => {
-  const [currentUrl, setCurrentUrl] = useState('');
-  const blockadeHandle = () => {
-    chrome.tabs.getSelected(null, (tab) => {
-      if (tab.url && tab.url.length > 0) {
-        setCurrentUrl(tab.url);
-      }
-    });
-  };
-
-  useEffect(() => {
+  const setToStorage = (url) => {
     chrome.storage.local.get(['urlList'], (item) => {
-      if (item.urlList && item.urlList.length >= 0) {
+      if (url && item.urlList && item.urlList.length >= 0) {
         chrome.storage.local.set({
-          urlList: [...new Set([...item.urlList, currentUrl])],
+          urlList: [...new Set([...item.urlList, url])],
         });
       } else {
         chrome.storage.local.set({
-          urlList: [currentUrl],
+          urlList: [url],
         });
       }
     });
-  }, [currentUrl]);
+  };
+
+  const blockadeHandle = () => {
+    chrome.tabs.getSelected(null, (tab) => {
+      if (tab.url && tab.url.length > 0) {
+        setToStorage(tab.url);
+      }
+    });
+  };
 
   const settingHandle = () => {
     chrome.tabs.create({
-      'url': 'setting.html'
-    })
+      url: 'setting.html',
+    });
   };
 
   return (
-    <PopupComp blockadeHandle={blockadeHandle} settingHandle={settingHandle} />
-  )
+    <PopupComp
+      blockadeHandle={blockadeHandle}
+      settingHandle={settingHandle}
+    />
+  );
 };
 
 export default Popup;

@@ -11,7 +11,11 @@ const Content = () => {
 
   useInterval(() => {
     chrome.storage.local.get(['urlList'], (item) => {
-      if (item.urlList && item.urlList.length >= 0 && !arrayMatch(blockadeList, item.urlList)) {
+      if (
+        item.urlList &&
+        item.urlList.length >= 0 &&
+        !arrayMatch(blockadeList, item.urlList)
+      ) {
         setBlockadeList(item.urlList);
       }
     });
@@ -32,7 +36,9 @@ const Content = () => {
   };
 
   const deleteUrl = () => {
-    setBlockadeList((list) => list.splice(selectIndex, 1));
+    const list = blockadeList;
+    list.splice(selectIndex, 1)
+    setBlockadeList(list);
 
     chrome.storage.local.set({
       urlList: [...blockadeList],
